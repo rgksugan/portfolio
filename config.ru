@@ -46,7 +46,7 @@ map '/resume.pdf' do
   [
     200, 
     {
-      'Content-Type'  => 'text/html', 
+      'Content-Type'  => 'application/pdf',
       'Cache-Control' => 'public, max-age=86400' 
     },
     File.open('public/Sugan_Resume.pdf', File::RDONLY)
