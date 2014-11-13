@@ -28,6 +28,19 @@ map '/about.html' do
 }
 end
 
+map '/resume.html' do
+  run lambda { |env|
+  [
+    200, 
+    {
+      'Content-Type'  => 'text/html', 
+      'Cache-Control' => 'public, max-age=86400' 
+    },
+    File.open('public/resume.html', File::RDONLY)
+  ]
+}
+end
+
 map '/contact.html' do
   run lambda { |env|
   [
