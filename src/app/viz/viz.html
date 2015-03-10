@@ -1,0 +1,17 @@
+<div class="container" ng-controller="VizCtrl">
+  <div class="row mt15">
+    <accordion close-others="true">
+      <accordion-group heading="Total Number of Road Accidents in India" is-open="true">
+        <div class="btn-group" dropdown is-open="status.isopen">
+          <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+            {{selectedState}} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="state in states" ng-click="selectState(state, $event)"><a href="#">{{state}}</a></li>
+          </ul>
+        </div>
+        <div class="chart" id="total-number-of-road-accidents-in-india"></div>
+      </accordion-group>
+    </accordion>
+  </div>
+</div>

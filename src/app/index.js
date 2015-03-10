@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('portfolio', ['ngAnimate', 'ngTouch', 'ngRoute', 'mgcrea.ngStrap'])
-  .config(function ($routeProvider) {
+angular.module('portfolio', ['ngAnimate', 'ngTouch', 'ngRoute', 'mgcrea.ngStrap', 'ui.bootstrap'])
+  .config(function ($routeProvider, $compileProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html'
@@ -15,8 +15,12 @@ angular.module('portfolio', ['ngAnimate', 'ngTouch', 'ngRoute', 'mgcrea.ngStrap'
       .when('/contact', {
         templateUrl: 'app/contact/contact.html'
       })
+      .when('/viz', {
+        templateUrl: 'app/viz/viz.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
+      $compileProvider.debugInfoEnabled(false);
   })
 ;
