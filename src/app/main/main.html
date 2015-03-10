@@ -1,0 +1,24 @@
+<div id="ww">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 centered">
+        <img src="assets/images/rgksugan.png" alt="Sugan" class="profile-pic">
+        <h1>Hi, I am Sugan!</h1>
+        <p>I am a developer with a passion to keep myself updated with the cutting edge technologies. I have a master’s degree in Advanced Computer Science from <a href="http://www.le.ac.uk/" target="_blank">University of Leicester, UK.</a></p>
+
+          <p>I started programming in my high school. I have experience developing mobile and web applications. My vast programming experience include Angular.js, Ember.js, Backbone.js, Android, iOS, RoR and node.</p>
+      </div>
+    </div>
+    </div>
+</div>
+
+<div class="container pt">
+  <div class="row mt centered" ng-repeat="workRow in workRows | limitTo:3 track by $index">
+    <div class="col-lg-4" ng-repeat="work in workRow track by $index">
+      <a class="zoom green" href="{{work.link}}" target="_blank">
+        <img class="img-responsive" src="{{work.image}}" />
+      </a>
+      <p>{{work.title}}</p>
+    </div>
+  </div>
+</div>

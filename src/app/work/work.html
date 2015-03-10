@@ -1,0 +1,17 @@
+<div class="container pt">
+  <div class="row mt">
+    <div class="col-lg-6 col-lg-offset-3 centered">
+      <h3>MY WORKS</h3>
+      <hr>
+      <p>Here are few of my works.</p>
+    </div>
+  </div>
+  <div class="row mt centered" ng-repeat="workRow in workRows track by $index">
+    <div class="col-lg-4" ng-repeat="work in workRow track by $index">
+      <a class="zoom green" href="{{work.link}}" target="_blank">
+        <img class="img-responsive" src="{{work.image}}" />
+      </a>
+      <p>{{work.title}}</p>
+    </div>
+  </div>
+</div>
