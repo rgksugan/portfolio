@@ -1,17 +1,29 @@
-<div class="container" ng-controller="VizCtrl">
+<div class="container-fluid" ng-controller="VizCtrl">
   <div class="row mt15">
-    <accordion close-others="true">
-      <accordion-group heading="Total Number of Road Accidents in India" is-open="true">
-        <div class="btn-group" dropdown is-open="status.isopen">
-          <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
-            {{selectedState}} <span class="caret"></span>
+    <div class="filters clearfix">
+      <div class="col-md-3">
+        <div class="btn-group btn-block" dropdown is-open="status.isopen">
+          <button type="button" class="btn btn-primary dropdown-toggle btn-block" dropdown-toggle>
+            {{stateFilter}} <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu" role="menu">
+          <ul class="dropdown-menu btn-block" role="menu">
             <li ng-repeat="state in states" ng-click="selectState(state, $event)"><a href="#">{{state}}</a></li>
           </ul>
         </div>
-        <div class="chart" id="total-number-of-road-accidents-in-india"></div>
-      </accordion-group>
-    </accordion>
+      </div>
+    </div>
+  </div>
+  <div class="row mt15">
+    <div class="col-md-3">
+      <ul class="chartsList">
+        <li ng-repeat="chart in charts track by $index" class="btn btn-default btn-block" ng-click="populateMap(chart)" ng-class="{active: chart.name === currentChart.name}">
+          {{chart.name}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div id="chartContainer">
+      </div>
+    </div>
   </div>
 </div>
