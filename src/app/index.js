@@ -18,8 +18,11 @@ angular.module('portfolio', ['ngAnimate', 'ngTouch', 'ngRoute', 'mgcrea.ngStrap'
       .when('/viz', {
         templateUrl: 'app/viz/viz.html'
       })
+      .when('/404', {
+        templateUrl: '404.html'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404'
       });
       $compileProvider.debugInfoEnabled(false);
   })
