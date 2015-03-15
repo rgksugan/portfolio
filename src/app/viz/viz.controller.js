@@ -156,7 +156,10 @@ angular.module('portfolio').controller('VizCtrl', function ($scope, $http) {
       tamilNadu.enter()
          .append('path')
          .attr('class', 'district')
+         .on('mouseover', function () {})
          .attr('d', path);
+
+      var color;
 
       d3.json('assets/data/literacy-rates.json', function (error, data) {
         var minRate = Math.floor(_.chain(data).pluck('total').min().value());
@@ -169,11 +172,21 @@ angular.module('portfolio').controller('VizCtrl', function ($scope, $http) {
         };
 
         //Update
-        var color = d3.scale.linear().domain([minRate, maxRate]).range(['#0000FF', '#00FF00']);
-        tamilNadu.on('mouseover', function (d){ tooltip.html(tooltipTemplate(getDistrictData(d.properties.DISTRICT))); return tooltip.style('visibility', 'visible');})
-                 .on('mousemove', function (){return tooltip.style('top', (event.pageY - 10) + 'px').style('left', (event.pageX + 10) + 'px');})
-                 .on('mouseout', function (){return tooltip.style('visibility', 'hidden');})
-                 .attr('fill', function(d,i) { return color(getDistrictData(d.properties.DISTRICT).total); });
+        color = d3.scale.linear().domain([minRate, maxRate]).range(['#EDF8E9', '#005A32']);
+        tamilNadu.on('mouseover', function (d) {
+                    tooltip.html(tooltipTemplate(getDistrictData(d.properties.DISTRICT)));
+                    return tooltip.style('visibility', 'visible');
+                  })
+                  .on('mousemove', function () {
+                    return tooltip.style('top', (event.pageY - 30) + 'px').style('left', (event.pageX + 30) + 'px');
+                  })
+                  .on('mouseout', function () {
+                    return tooltip.style('visibility', 'hidden')
+                  })
+                  .attr('fill', function(d,i) {
+                    return color(getDistrictData(d.properties.DISTRICT).total);
+                  });
+
       });
 
       //Exit
