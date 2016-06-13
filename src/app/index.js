@@ -15,8 +15,14 @@ angular.module('portfolio', ['ngAnimate', 'ngTouch', 'ngRoute', 'mgcrea.ngStrap'
       .when('/contact', {
         templateUrl: 'app/contact/contact.html'
       })
-      .when('/viz', {
-        templateUrl: 'app/viz/viz.html'
+      .when('/lab', {
+        templateUrl: 'app/lab/lab.html'
+      })
+      .when('/lab/visualiations/tamil-nadu-literacy-rates', {
+        templateUrl: 'app/viz/tn-literacy-rates.html'
+      })
+      .when('/readings', {
+        templateUrl: 'app/readings/readings.html'
       })
       .when('/404', {
         templateUrl: '404.html'

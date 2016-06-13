@@ -18,11 +18,6 @@ angular.module('portfolio').controller('MainCtrl', function ($scope, $filter) {
       image: 'assets/images/port10.jpg',
       priority: 3
     }, {
-      title: 'Chennai Bus Routes',
-      link: 'https://play.google.com/store/apps/details?id=in.rgksugan.chennaibusroute',
-      image: 'assets/images/port02.jpg',
-      priority: 4
-    }, {
       title: 'Department of CSE, Karunya University',
       link: 'http://www.karunya.edu/cse/',
       image: 'assets/images/port06.jpg',
@@ -52,11 +47,6 @@ angular.module('portfolio').controller('MainCtrl', function ($scope, $filter) {
       link: 'https://itunes.apple.com/us/app/cloudfuze/id694718661?mt=8',
       image: 'assets/images/port08.jpg',
       priority: 10
-    }, {
-      title: 'LaTeX 4 Android',
-      link: 'https://play.google.com/store/apps/details?id=in.rgksugan.latex4android',
-      image: 'assets/images/port03.jpg',
-      priority: 11
     }];
 
     $scope.works = $filter('orderBy')($scope.works, 'priority');
