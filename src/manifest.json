@@ -1,0 +1,7 @@
+{
+  "name": "Sugan",
+  "theme_color": "#1abc9c",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/"
+}
