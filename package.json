@@ -30,7 +30,7 @@
     "gulp-size": "~1.1.0",
     "gulp-uglify": "~1.0.1",
     "gulp-useref": "~1.0.2",
-    "http-proxy": "~1.7.0",
+    "http-proxy": "~1.18.1",
     "jade": "~1.8.1",
     "jshint-stylish": "~1.0.0",
     "main-bower-files": "~2.4.0",
